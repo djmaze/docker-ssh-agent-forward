@@ -1,0 +1,14 @@
+version: "3.4"
+
+services:
+  app:
+    image: ocaml/opam
+    command: ssh git@github.com
+    environment:
+      SSH_AUTH_SOCK: /ssh-agent/ssh-agent.sock
+    volumes:
+      - ssh-agent:/ssh-agent
+
+volumes:
+  ssh-agent:
+    external: true
