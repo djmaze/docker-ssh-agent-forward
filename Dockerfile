@@ -8,4 +8,4 @@ COPY docker-entrypoint.sh /
 EXPOSE 22
 VOLUME ["/ssh-agent"]
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["/usr/sbin/sshd","-D"]
+CMD ["/usr/sbin/sshd","-D", "-e"]
